@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ZendeskTickets</title>
+  <title>Zendesk Ticket Viewer</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+
+
+<div id="outer">
+  <h1>Welcome to the Zendesk Ticket Viewer</h1>
+    <div id="tickets">
+    <%= yield %>
+    </div>
+</div>
+
+
 
 </body>
 </html>

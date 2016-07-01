@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font: 100 1em/150% "proxima-nova", Helvetica, sans-serif;
+  }
+
+h1 {
+  font-size: 2em;
+  color: #3399FF;
+}
+
+#outer {
+ max-width: 960px;
+ margin: auto;
+}
+
+#tickets {
+  justify-content: center;
+  background-color: lightgray;
+  padding: 2% 10%;
+}

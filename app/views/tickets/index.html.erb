@@ -1,7 +1,8 @@
 
 <% @responses.each do |response| %>
-  <p><%= response. %>Ticket subject:<%= response["subject"] %> opened by <%= response["submitter_id"] %> on <%= Time.parse(response["created_at"]).strftime('%d.%m.%y')  %></p>
+  <a href="">Subject:<%= response["subject"] %> opened by <%= response["submitter_id"] %> on <%= Time.parse(response["created_at"]).strftime('%d.%m.%y')  %></p>
 <% end %>
+
 
 
 
