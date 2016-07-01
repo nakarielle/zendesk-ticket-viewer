@@ -2,11 +2,12 @@
 class TicketsController < ApplicationController
 
   def index
-   @responses = Ticket.new.tickets_by_page(1)
+    tickets = Zendesk.new
+    @responses = Ticket.by_page(1)
   end
 
   def show
-   @ticket = Ticket.new.get_single_ticket(params[:id])
+    @ticket = Ticket.find(params[:id])
   end
 
 
