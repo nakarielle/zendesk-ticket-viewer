@@ -15,7 +15,6 @@ class Ticket
   def self.by_page(page_number)
     api = ZendeskApi.new
     tickets = api.get_tickets
-    return nil if tickets.nil?
 
     first = 0 + (page_number.to_i-1)*25 
     last = first + 24
