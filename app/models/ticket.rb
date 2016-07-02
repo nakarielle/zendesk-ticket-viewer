@@ -1,7 +1,5 @@
-
 class Ticket
-
-  attr_accessor :subject, :description, :created_at, :priority, :status, :tags, :id
+  attr_accessor :subject, :description, :submitter, :created_at, :priority, :status, :tags, :id
 
   def initialize(subject, description, submitter, created_at, priority, status, tags, id)
     @subject = subject
@@ -14,24 +12,18 @@ class Ticket
     @id = id
   end
 
-  def self.all
-    tickets = ObjectSpace.each_object(self).to_a
-  end
-
   def self.by_page(page_number)
-    first = 0 + (page_number-1)*25 
+    api = ZendeskApi.new
+    tickets = api.get_tickets
+    return nil if tickets.nil?
+
+    first = 0 + (page_number.to_i-1)*25 
     last = first + 24
-    all[first..last]
+    tickets[first..last]
   end
 
-  def self.find(id)
-    all.select { |ticket| ticket.id == id }
+  def self.single_ticket(id)
+    api = ZendeskApi.new
+    api.get_ticket(id)
   end
-
-
-
-
-
-
-
 end

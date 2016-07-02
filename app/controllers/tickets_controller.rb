@@ -1,15 +1,11 @@
 
 class TicketsController < ApplicationController
-
   def index
-    tickets = Zendesk.new
-    @responses = Ticket.by_page(1)
+    page = params[:page] || 1
+    @tickets = Ticket.by_page(page) 
   end
 
   def show
-    @ticket = Ticket.find(params[:id])
+    @ticket = Ticket.single_ticket(params[:id])
   end
-
-
-
 end

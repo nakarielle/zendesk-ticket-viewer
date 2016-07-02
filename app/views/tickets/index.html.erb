@@ -1,6 +1,6 @@
 
-<% @responses.each do |response| %>
-  <a href="">Subject:<%= response.subject %> on <%= Time.parse(response.created_at).strftime('%d.%m.%y')  %></p>
+<% @tickets.each do |ticket| %>
+  <a href="/ticket/<%= ticket.id %>">Subject:<%= ticket.subject %> on <%= Time.parse(ticket.created_at).strftime('%d.%m.%y')  %></a>
 <% end %>
 
 
