@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe ZendeskApi do 
 
-
   describe '#get_tickets' do
 
     context "error handling" do

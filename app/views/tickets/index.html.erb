@@ -1,8 +1,14 @@
 
 <% @tickets.each do |ticket| %>
-  <a href="/ticket/<%= ticket.id %>">Subject:<%= ticket.subject %> on <%= Time.parse(ticket.created_at).strftime('%d.%m.%y')  %></a>
+  <p><a href="/ticket/<%= ticket.id %>">Subject:<%= ticket.subject %> on <%= Time.parse(ticket.created_at).strftime('%d.%m.%y')  %></a></p>
 <% end %>
 
+<p>Page <%= @page %> of <%= @num_of_pages %></p>
 
+<% if @page.to_i - 1 >= 1 %>
+  <a href="/page/<%= @page.to_i - 1 %>">Previous Page</a>
+<% end %>
 
-
+<% if @page.to_i < @num_of_pages %>
+  <a href="/page/<%= @page.to_i + 1 %>">Next Page</a>
+<% end %>
