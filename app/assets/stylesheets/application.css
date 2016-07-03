@@ -15,13 +15,26 @@
  */
 
 body {
-  font: 100 1em/150% "proxima-nova", Helvetica, sans-serif;
+  font: 100 1em "proxima-nova", Helvetica, sans-serif;
+  background-color: #B2DFDB;
   }
 
-h1 {
-  font-size: 2em;
-  color: #3399FF;
+nav {
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  height: 70px;
+  background-color: #00897B;
 }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding-left: 10%;
+  font-size: 1.5em;
+}
+
 
 #outer {
  max-width: 960px;
@@ -29,7 +42,31 @@ h1 {
 }
 
 #tickets {
-  justify-content: center;
-  background-color: lightgray;
+  background-color: white;
+  margin-top: 7%;
   padding: 2% 10%;
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  line-height: 1.5em;
+}
+
+#tickets a {
+  color: black;
+}
+
+#tickets a:hover {
+  color: #00897B;
+}
+
+#page {
+  padding-top: 3%;
+}
+
+#page a {
+  text-decoration: none;
 }

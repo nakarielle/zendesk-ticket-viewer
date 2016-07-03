@@ -1,3 +1,12 @@
-I experimented with returning all tickets in the account, rather than just 100 from the first API but it made the site very slow
+
+- Tests
+
+- Change layout of page (CSS)
+  - Header
+  - Table view for list of tickets
+
+- Single ticket view page fields
+
+- README
 
 

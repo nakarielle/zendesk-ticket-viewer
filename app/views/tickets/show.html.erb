@@ -1,4 +1,14 @@
 
-<%= @ticket %>
+<h3><%= @ticket.subject %></h3> 
+
+<p><%= @ticket.description %></p>
+
+<p><strong>Submitted By:</strong> <%= @ticket.submitter %></p>
+
+<p><strong>Created:</strong> <%= parse_time(@ticket.created_at) %></p>
+
+<p><strong>Last Updated:</strong> <%= parse_time(@ticket.updated_at) %></p>
+
+<p><strong>Status:</strong> <%= @ticket.status %></p>
 
 <%= link_to 'Back', :back %>
