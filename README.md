@@ -3,19 +3,19 @@
 Code Test for Zendesk Internship
 Built in Rails v4.2.6
 
-##How to Run Locally
+###How to Run Locally
 
 - Ensure you have at least version 2.2.2 of Ruby installed. Version can be checked by running ruby -v in the terminal.
 - In the project folder on the terminal, run bundle to install dependencies and then run rails s to start the server.
 - Go to http://localhost:3000/ in a browser to see the app.
 
-##Testing
+###Testing
 
 - In the project folder on the terminal, type rspec to run tests.
 - These are only basic tests. I researched how to test error handling but was not able to get that working for this project.
 
 
-##Design Notes
+###Design Notes
 
 This is a pared down version of Rails - I removed files and gems I didn't need for a small app without a database. I am using the HTTParty gem to make the API calls, as it is a neater, easier way than Ruby's built in Net::HTTP class.
 
