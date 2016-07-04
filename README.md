@@ -1,17 +1,20 @@
 ##Zendesk Ticket Viewer
 
 Code Test for Zendesk Internship
+
 Built in Rails v4.2.6
 
 ###How to Run Locally
 
-- Ensure you have at least version 2.2.2 of Ruby installed. Version can be checked by running ruby -v in the terminal.
-- In the project folder on the terminal, run bundle to install dependencies and then run rails s to start the server.
-- Go to http://localhost:3000/ in a browser to see the app.
+1. Clone or fork this repo.
+2. Ensure you have at least version 2.2.2 of Ruby installed. Version can be checked by running `ruby -v` in the terminal.
+3. Run `bundle` to install dependencies.
+4. Run `rails s` to start the server.
+5. Go to <http://localhost:3000/> in a browser to see the app.
 
 ###Testing
 
-- In the project folder on the terminal, type rspec to run tests.
+- In the project folder on the terminal, run `rspec` to run tests.
 - These are only basic tests. I researched how to test error handling but was not able to get that working for this project.
 
 
