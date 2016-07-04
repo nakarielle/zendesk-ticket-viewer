@@ -1,13 +1,15 @@
-
-
 <table>
-
-<% @tickets.each do |ticket| %>
   <tr>
-  <td><a href="/ticket/<%= ticket.id %>"><%= ticket.subject %></a></td>
-  <td><%= parse_time(ticket.created_at) %></td>
+    <th>Ticket</th>
+    <th>Last Updated</th>
   </tr>
-<% end %>
+
+  <% @tickets.each do |ticket| %>
+    <tr>
+    <td><a href="/ticket/<%= ticket.id %>"><%= ticket.subject %></a></td>
+    <td><%= parse_time(ticket.updated_at) %></td>
+    </tr>
+  <% end %>
 </table>
 
 <div id="page">

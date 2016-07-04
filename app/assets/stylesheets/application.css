@@ -35,7 +35,6 @@ nav a {
   font-size: 1.5em;
 }
 
-
 #outer {
  max-width: 960px;
  margin: auto;
@@ -48,11 +47,15 @@ nav a {
 }
 
 table {
-  width: 100%;
+  width: 100%; 
+}
+
+th {
+  text-align: left;
 }
 
 tr {
-  line-height: 1.5em;
+  line-height: 1.6em;
 }
 
 #tickets a {
@@ -64,7 +67,8 @@ tr {
 }
 
 #page {
-  padding-top: 3%;
+  padding-top: 2%;
+  text-align: center;
 }
 
 #page a {

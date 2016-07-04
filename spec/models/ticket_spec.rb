@@ -1,17 +1,12 @@
 require 'rails_helper'
 
-describe Ticket do 
+describe Ticket do
 
   describe '.by_page' do
-    subject { Ticket.by_page(2) }
+    subject { Ticket.by_page(5)[:tickets] }
 
-    it 'returns an array of 25 objects' do
+    it 'returns 25 tickets for page 5' do
       expect(subject.size).to eq 25
-    end
-
-    it 'contains Ticket objects' do
-      item = subject[0]
-      expect(item).to be_an_instance_of Ticket
     end
   end
 

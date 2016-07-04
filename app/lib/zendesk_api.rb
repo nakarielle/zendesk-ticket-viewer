@@ -6,23 +6,30 @@ class ZendeskApi
 
   def tickets(page)
     zendesk_page = (page.to_f / 4).ceil
-    api_response = api_call("https://karina1818.zendesk.com/api/v2/tickets.json?page=#{zendesk_page}")
+    # Zendesk API returns 100 results per page, I need 25 per page
+    api_response = api_call("https://karina1818.zendesk.com/api/v2/tickets.json?page=#{zendesk_page}&sort_by=updated_at&sort_order=desc")
     tickets = api_response['tickets']
 
     { tickets: tickets.map { |ticket| new_ticket(ticket) },
-      page: zendesk_page,
+      zendesk_page: zendesk_page,
       count: api_response['count'] }
   end
 
   def ticket(id)
     ticket = api_call("https://karina1818.zendesk.com/api/v2/tickets/#{id}.json")['ticket']
     new_ticket(ticket)
-  end 
+  end
 
   private
-
+  
   def api_call(url)
-    response = HTTParty.get(url, basic_auth: @auth)
+    begin
+      response = HTTParty.get(url, basic_auth: @auth)
+    rescue Timeout::Error, Errno::ECONNRESET, Errno::EINVAL, 
+           Errno::ECONNRESET, EOFError,  Net::HTTPBadResponse, 
+           Net::HTTPHeaderSyntaxError, Net::ProtocolError, SocketError => e
+       raise HTTParty::Error.new(e.message)
+    end
     raise HTTParty::Error.new('Bad response') unless response.success?
     response
   end
