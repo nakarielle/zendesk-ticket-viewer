@@ -1,5 +1,6 @@
 class Ticket
-  attr_accessor :subject, :description, :submitter, :created_at, :updated_at, :status, :id
+  attr_accessor :subject, :description, :submitter, :created_at, 
+                :updated_at, :status, :id
 
   def initialize(subject, description, submitter, created_at, updated_at, status, id)
     @subject = subject

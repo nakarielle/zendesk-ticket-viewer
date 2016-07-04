@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Ticket do
-
   describe '.by_page' do
     subject { Ticket.by_page(5)[:tickets] }
 
@@ -14,7 +13,7 @@ describe Ticket do
     subject { Ticket.single_ticket(10) }
 
     it 'returns the ticket with id of 10' do
-      expect(subject.id).to eq 10 
+      expect(subject.id).to eq 10
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ZendeskApi do 
+describe ZendeskApi do
   let(:app) { ZendeskApi.new }
 
   describe '#tickets' do

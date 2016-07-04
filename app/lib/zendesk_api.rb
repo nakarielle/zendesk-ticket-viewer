@@ -21,14 +21,15 @@ class ZendeskApi
   end
 
   private
-  
+
   def api_call(url)
     begin
       response = HTTParty.get(url, basic_auth: @auth)
-    rescue Timeout::Error, Errno::ECONNRESET, Errno::EINVAL, 
-           Errno::ECONNRESET, EOFError,  Net::HTTPBadResponse, 
-           Net::HTTPHeaderSyntaxError, Net::ProtocolError, SocketError => e
-       raise HTTParty::Error.new(e.message)
+      # rescuing potential errors that a Net::HTTP request might raise and raising a HTTParty::Error so that I can rescue it in the Controller
+    rescue Timeout::Error, Errno::ECONNRESET, Errno::EINVAL,
+           Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, 
+           Net::HTTPHeaderSyntaxError, Net::ProtocolError,SocketError => e
+      raise HTTParty::Error.new(e.message)
     end
     raise HTTParty::Error.new('Bad response') unless response.success?
     response
